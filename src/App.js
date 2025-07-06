@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
+// 备用方案：直接导入图片
+import allinbonkImage from './allinbonk.jpeg';
 
 function App() {
   const [copied, setCopied] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -11,20 +14,26 @@ function App() {
     });
   };
 
+  // 处理图片加载错误
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
   return (
     <div className="App">
       <div className="main-container">
         <div className="profile-section">
           <div className="avatar">
-                        <img
-              src="/allinbonk.jpeg"
-              alt="Petunia the Pig"
+            <img
+              src={imageError ? allinbonkImage : `${process.env.PUBLIC_URL}/allinbonk.jpeg`}
+              alt="Allin Bonk"
               className="avatar-image"
+              onError={handleImageError}
             />
           </div>
 
           {/* 名字 */}
-          <h1 className="name">Allin Bonk #梭哈</h1>
+          <h1 className="name">🐷 Allin Bonk</h1>
 
           {/* CA信息区域 */}
           <div className="ca-section">
