@@ -33,7 +33,7 @@ function App() {
           </div>
 
           {/* 名字 */}
-          <h1 className="name">🐷 Allin Bonk</h1>
+          <h1 className="name">💵 Allin Bonk #梭哈</h1>
 
           {/* CA信息区域 */}
           <div className="ca-section">
