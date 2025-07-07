@@ -2,11 +2,16 @@
 import { Twitter, Send } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import '../globals.css'
-import { VIDEO_URLS, getCachedVideo } from '../components/VideoPreloader'
+import { VIDEO_URLS, getCachedVideo, cleanupVideoCache } from '../components/VideoPreloader'
 
 export default function MainPage() {
   const [isPhotoExpanded, setIsPhotoExpanded] = useState(false)
   const [videosLoaded, setVideosLoaded] = useState(false)
+
+  useEffect(() => {
+    // Clean up preloaded hidden iframes before rendering visible ones
+    cleanupVideoCache();
+  }, []);
 
   useEffect(() => {
     // Check if videos are already cached
@@ -72,7 +77,7 @@ export default function MainPage() {
       {!videosLoaded && (
         <div className="fixed inset-0 z-30 bg-black/80 flex items-center justify-center">
           <div className="text-gold text-2xl font-bold animate-pulse">
-            Loading Casino Experience...
+            Loading All In Experience...
           </div>
         </div>
       )}
