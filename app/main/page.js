@@ -150,7 +150,7 @@ export default function MainPage() {
           <div className="banner">
             <div className="banner-content">
               <h2 className="text-4xl md:text-6xl font-bold text-gold mb-4">
-                It's Time To Go All In
+                It&apos;s Time To Go All In
               </h2>
               <p className="text-xl md:text-2xl text-white/90 mb-6">
                 Join Us
@@ -175,7 +175,7 @@ export default function MainPage() {
         >
           <div className="expanded-photo-content">
             <div className="expanded-photo">
-              <img
+              <img 
                 src="/banner.jpg" 
                 alt="Casino Banner" 
                 className="expanded-photo-image"
