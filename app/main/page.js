@@ -130,7 +130,7 @@ export default function MainPage() {
             className={`clickable-photo ${isPhotoExpanded ? 'expanded' : ''}`}
             onClick={togglePhoto}
           >
-            <img 
+            <Image 
               src="/banner.jpg" 
               alt="Casino Banner" 
               className="photo-image"
@@ -175,7 +175,7 @@ export default function MainPage() {
         >
           <div className="expanded-photo-content">
             <div className="expanded-photo">
-              <img 
+              <Image 
                 src="/banner.jpg" 
                 alt="Casino Banner" 
                 className="expanded-photo-image"
